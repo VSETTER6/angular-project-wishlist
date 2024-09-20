@@ -15,14 +15,28 @@
     </div>
   </form>
 
+  <div class="row mt-3">
+    <div class="col-sm-2">
+      <select 
+      class="form-select"
+      [(ngModel)]="listFilter"
+      (ngModelChange)="filterChanged($event)"
+      >
+        <option value="0">All</option>
+        <option value="1">Unfulfilled</option>
+        <option value="2">Fulfilled</option>
+      </select>
+    </div>
+  </div>
+
   <div class="row m-3">
-    <div *ngIf="items.length == 0; else showItems">
+    <div *ngIf="visableItems.length == 0; else showItems">
       There are no wishes to display.
     </div>
   
     <ng-template #showItems>
       <ul *ngIf="items.length > 0" class="wishlist">
-        <li *ngFor="let item of items; index as ii">
+        <li *ngFor="let item of visableItems; index as ii">
           <div class="form-check">
             <label class="form-check-label">
               <input 
