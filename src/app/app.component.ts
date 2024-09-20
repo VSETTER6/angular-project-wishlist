@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
 import { WishItem } from '../models/wishItem';
+import { filter } from 'rxjs';
+
+const filters = [
+  (item : WishItem) => item,
+  (item : WishItem) => !item.isCompleted,
+  (item : WishItem) => item.isCompleted
+]
 
 @Component({
   selector: 'app-root',
@@ -13,29 +20,19 @@ export class AppComponent {
     new WishItem('Grass that cuts itself')
   ]
 
-  listFilter : String = '0';
+  listFilter : any = '0';
 
   newWishText = "";
 
   title = 'wishlist';
 
-  visableItems : WishItem[] = this.items;
+  get visableItems() : WishItem[] {
+    return this.items.filter(filters[this.listFilter]);
+  };
 
   addNewWish() {
     this.items.push(new WishItem(this.newWishText));
     this.newWishText = '';
-  }
-
-  filterChanged(value : any){
-    if(value == 0) {
-      this.visableItems = this.items;
-    }
-    else if (value == 1) {
-      this.visableItems = this.items.filter(item => !item.isCompleted);
-    }
-    else {
-      this.visableItems = this.items.filter(item => item.isCompleted);
-    }
   }
 
   toggleItem(item : WishItem) {
