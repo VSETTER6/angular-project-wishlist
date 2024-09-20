@@ -12,9 +12,10 @@
             <input 
               class="checkbox" 
               type="checkbox"
-              [checked]="item.isCompleted"> 
+              [checked]="item.isCompleted" 
               [attr.data-index]="ii"
-              {{ item.wishText }}
+              (click)="toggleItem(item)"
+            > {{ item.wishText }}
           </label>
         </div>
       </li>

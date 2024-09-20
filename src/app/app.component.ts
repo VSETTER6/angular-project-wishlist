@@ -13,4 +13,9 @@ export class AppComponent {
     new WishItem('Grass that cuts itself')
   ]
   title = 'my wishlist';
+
+  toggleItem(item : WishItem) {
+    item.isCompleted = !item.isCompleted;
+    console.log(item);
+  }
 }
