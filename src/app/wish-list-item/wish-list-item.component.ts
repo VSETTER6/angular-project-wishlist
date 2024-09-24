@@ -7,19 +7,24 @@ import { WishItem } from '../../shared/models/wishItem';
   styleUrl: './wish-list-item.component.css'
 })
 
-export class WishListItemComponent {
+export class WishListItemComponent implements OnInit{
   @Input() wishText! : string;
 
   @Input() fullfilled! : boolean;
-  @Output() fullfilledChanged = new EventEmitter<boolean>();
+  @Output() fullfilledChange = new EventEmitter<boolean>();
 
+  get cssClasses() {
+    // return this.fullfilled ? ['strikeout', 'text-muted'] : [];
+
+    return {'strikeout text-muted' : this.fullfilled};
+  }
 
   constructor() {}
 
-  ngOninit() {}
+  ngOnInit() : void {}
 
   toggleFullfilled() {
     this.fullfilled = !this.fullfilled;
-    this.fullfilledChanged.emit(this.fullfilled);
+    this.fullfilledChange.emit(this.fullfilled);
   }
 }

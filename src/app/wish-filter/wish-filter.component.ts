@@ -19,7 +19,7 @@ export class WishFilterComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit() : void {
     this.updateFilter('0');
   }
 

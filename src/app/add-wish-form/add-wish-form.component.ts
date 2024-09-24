@@ -12,7 +12,7 @@ export class AddWishFormComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() : void {}
 
   newWishText = "";
 
