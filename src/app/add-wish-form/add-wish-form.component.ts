@@ -10,6 +10,8 @@ import { WishItem } from '../../shared/models/wishItem';
 export class AddWishFormComponent implements OnInit {
   @Output() addWish = new EventEmitter<WishItem>();
 
+  constructor() {}
+
   ngOnInit() {}
 
   newWishText = "";

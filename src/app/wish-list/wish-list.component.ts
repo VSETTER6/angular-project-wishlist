@@ -10,10 +10,7 @@ import { WishItem } from '../../shared/models/wishItem';
 export class WishListComponent implements OnInit {
   @Input() wishes : WishItem[] = [];
 
-  ngOnInit() {}
+  constructor() {}
 
-  toggleItem(item : WishItem) {
-    item.isComplete = !item.isComplete;
-    console.log(item);
-  }
+  ngOnInit() {}
 }

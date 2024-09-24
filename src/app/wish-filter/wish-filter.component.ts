@@ -17,6 +17,8 @@ export class WishFilterComponent implements OnInit {
   @Input() filter : any;
   @Output() filterChange = new EventEmitter<any>();
 
+  constructor() {}
+
   ngOnInit() {
     this.updateFilter('0');
   }
