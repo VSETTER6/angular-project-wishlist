@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { WishItem } from '../shared/models/wishItem';
-import { filter } from 'rxjs';
 
 const filters = [
   (item : WishItem) => item,
-  (item : WishItem) => !item.isCompleted,
-  (item : WishItem) => item.isCompleted
+  (item : WishItem) => !item.isComplete,
+  (item : WishItem) => item.isComplete
 ]
 
 @Component({
@@ -18,7 +17,7 @@ export class AppComponent {
     new WishItem('Learn Angular'),
     new WishItem('Get coffee', true),
     new WishItem('Grass that cuts itself')
-  ]
+  ];
 
   listFilter : any = '0';
 
@@ -36,7 +35,7 @@ export class AppComponent {
   }
 
   toggleItem(item : WishItem) {
-    item.isCompleted = !item.isCompleted;
+    item.isComplete = !item.isComplete;
     console.log(item);
   }
 }
