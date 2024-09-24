@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WishItem } from '../models/wishItem';
+import { WishItem } from '../shared/models/wishItem';
 import { filter } from 'rxjs';
 
 const filters = [
