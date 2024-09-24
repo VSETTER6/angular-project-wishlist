@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { WishItem } from '../../shared/models/wishItem';
 
 @Component({
@@ -7,8 +7,10 @@ import { WishItem } from '../../shared/models/wishItem';
   styleUrl: './add-wish-form.component.css'
 })
 
-export class AddWishFormComponent {
+export class AddWishFormComponent implements OnInit {
   @Output() addWish = new EventEmitter<WishItem>();
+
+  ngOnInit() {}
 
   newWishText = "";
 

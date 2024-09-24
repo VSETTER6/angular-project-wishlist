@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { WishItem } from '../../shared/models/wishItem';
 
 @Component({
@@ -7,8 +7,10 @@ import { WishItem } from '../../shared/models/wishItem';
   styleUrl: './wish-list.component.css'
 })
 
-export class WishListComponent {
-  @Input() wishes : WishItem[] = []; 
+export class WishListComponent implements OnInit {
+  @Input() wishes : WishItem[] = [];
+
+  ngOnInit() {}
 
   toggleItem(item : WishItem) {
     item.isComplete = !item.isComplete;
