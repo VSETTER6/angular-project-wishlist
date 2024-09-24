@@ -6,6 +6,7 @@ import { WishItem } from '../../shared/models/wishItem';
   templateUrl: './add-wish-form.component.html',
   styleUrl: './add-wish-form.component.css'
 })
+
 export class AddWishFormComponent {
   @Output() addWish = new EventEmitter<WishItem>();
 
