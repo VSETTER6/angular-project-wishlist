@@ -8,8 +8,7 @@ import { WishItem } from '../../shared/models/wishItem';
 })
 
 export class WishListComponent {
-  @Input() wishes : WishItem[] = [];
-  constructor() {} 
+  @Input() wishes : WishItem[] = []; 
 
   toggleItem(item : WishItem) {
     item.isComplete = !item.isComplete;
