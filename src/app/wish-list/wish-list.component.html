@@ -6,8 +6,7 @@
     <ul class="wishlist">
       <wish-list-item
         *ngFor="let wish of wishes"
-        [wishText]="wish.wishText"
-        [(fullfilled)]="wish.isComplete"
+        [wish]="wish"
       ></wish-list-item>
     </ul>
 </ng-template>
