@@ -1,4 +1,4 @@
-<li>
+<li class="d-flex justify-content-between">
   <div class="form-check">
     <label class="form-check-label" [ngClass]="cssClasses">
       <input 
@@ -8,5 +8,8 @@
         (click)="toggleFullfilled()"
       > {{ wishText }}
     </label>
+  </div>
+  <div>
+    <button class="btn-close" type="button" (click)="removeWish()"></button>
   </div>
 </li>
